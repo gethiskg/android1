@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">dayOneHomeWork</string>
+    <string name="welcom_to_it">Welcom to IT</string>
+    <string name="welcome_to_it">Welcome to IT</string>
+    <string name="prompt_email">email</string>
+    <string name="password">password</string>
+    <string name="sing_in_with_facebook">sing in with facebook</string>
+    <string name="do_you_need_an_account">do you need an account ?</string>
+</resources>
