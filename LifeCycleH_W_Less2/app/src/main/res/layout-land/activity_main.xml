@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/headerMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/advent_pro"
+        android:gravity="center_horizontal"
+        android:text="Life Cycle Activity"
+        android:textAlignment="center"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="25sp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="#B4C774"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        />
+
+    <EditText
+        android:id="@+id/editFirst_Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="type your number"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/headerMain"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"
+        android:inputType="numberSigned"        />
+    <EditText
+        android:id="@+id/editSecond_Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="type second number"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/editFirst_Text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        android:inputType="numberSigned"        />
+    <EditText
+        android:id="@+id/editThird_Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="type third number"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/editSecond_Text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        android:inputType="numberSigned"        />
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/editThird_Text"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:backgroundTint="#6FCB16"
+        android:text="calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
