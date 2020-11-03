@@ -16,6 +16,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private static final String KEY_TAG = "otherOne";
+    public static final int REQUEST_CODE = 1;
     ImageView imageView;
     TextView textView;
     Button buttonImage, buttonGmail;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,REQUEST_CODE);
 
             }
         });
@@ -68,12 +69,7 @@ public class MainActivity extends AppCompatActivity {
             imageString = getIntent.getStringExtra(SecondActivity.KEY_FOR_IMAGE);
             imageView.setImageURI(Uri.parse(imageString));
             textView.setText(textMessage);
-        } else {
-            Toast.makeText(MainActivity.this, "please select an image ", Toast.LENGTH_SHORT).show();
         }
-
-
     }
-
 
 }

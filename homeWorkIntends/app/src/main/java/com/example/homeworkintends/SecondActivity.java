@@ -25,7 +25,7 @@ public class SecondActivity extends AppCompatActivity {
     ImageView imageView;
     Button buttonSave;
     EditText textToMail;
-    Uri selectedImage;
+    String  selectedImage;
 
     private static final int PICTURE_SELECTED = 1;
 
@@ -62,12 +62,14 @@ public class SecondActivity extends AppCompatActivity {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentSender = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intentSender = new Intent(SecondActivity.this,MainActivity.class);
                 textToMail = findViewById(R.id.editTextSecondPage);
                 String valueOfEditText = textToMail.getText().toString();
                 intentSender.putExtra(KEY_FOR_INPUT, valueOfEditText);
-                intentSender.putExtra(KEY_FOR_IMAGE, selectedImage.toString());
+                intentSender.putExtra(KEY_FOR_IMAGE, selectedImage);
                 startActivity(intentSender);
+                finish();
+
             }
         });
     }
@@ -76,13 +78,8 @@ public class SecondActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICTURE_SELECTED && resultCode == RESULT_OK && null != data) {
-            try {
-                selectedImage = data.getData();
-                InputStream imageStreaming = getContentResolver().openInputStream(selectedImage);
-                imageView.setImageBitmap(BitmapFactory.decodeStream(imageStreaming));
-            } catch (FileNotFoundException e) {
-                e.getMessage();
-            }
+                selectedImage = data.getDataString();
+                imageView.setImageURI(Uri.parse(selectedImage));
         }else if (resultCode == RESULT_CANCELED && requestCode == PICTURE_SELECTED){
             Toast.makeText(SecondActivity.this,"you haven't picked any image",Toast.LENGTH_SHORT).show();
         }
