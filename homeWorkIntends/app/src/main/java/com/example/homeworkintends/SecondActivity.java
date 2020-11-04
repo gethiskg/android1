@@ -22,12 +22,12 @@ import java.io.InputStream;
 public class SecondActivity extends AppCompatActivity {
     public static final String KEY_FOR_INPUT = "key";
     public static final String KEY_FOR_IMAGE = "image";
+    private static final int PICTURE_SELECTED = 1;
+
     ImageView imageView;
     Button buttonSave;
     EditText textToMail;
     String  selectedImage;
-
-    private static final int PICTURE_SELECTED = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,7 @@ public class SecondActivity extends AppCompatActivity {
         buttonSave = findViewById(R.id.buttonSecond);
         ImageView addIcon = findViewById(R.id.addIcon);
         imageView = findViewById(R.id.imageSecondActivity);
+        textToMail = findViewById(R.id.editTextSecondPage);
 
 
         addIcon.setOnClickListener(new View.OnClickListener() {
@@ -58,22 +59,6 @@ public class SecondActivity extends AppCompatActivity {
     }
 
 
-    private void buttonSand() {
-        buttonSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentSender = new Intent(SecondActivity.this,MainActivity.class);
-                textToMail = findViewById(R.id.editTextSecondPage);
-                String valueOfEditText = textToMail.getText().toString();
-                intentSender.putExtra(KEY_FOR_INPUT, valueOfEditText);
-                intentSender.putExtra(KEY_FOR_IMAGE, selectedImage);
-                startActivity(intentSender);
-                finish();
-
-            }
-        });
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -86,6 +71,21 @@ public class SecondActivity extends AppCompatActivity {
 
 
     }
+    private void buttonSand() {
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentSender = getIntent();
+                String valueOfEditText = textToMail.getText().toString();
+                intentSender.putExtra(KEY_FOR_INPUT, valueOfEditText);
+                intentSender.putExtra(KEY_FOR_IMAGE, selectedImage);
+                setResult(RESULT_OK,intentSender);
+                finish();
+
+            }
+        });
+    }
+
 
 
 }

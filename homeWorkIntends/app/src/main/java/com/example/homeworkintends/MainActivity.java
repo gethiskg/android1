@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         actionsOnBtn();
-        gettingIntent();
 
 
     }
@@ -36,11 +35,13 @@ public class MainActivity extends AppCompatActivity {
     private void actionsOnBtn() {
         buttonImage = findViewById(R.id.btnPickImage);
         buttonGmail = findViewById(R.id.btnGmail);
+        imageView = findViewById(R.id.imageInMain);
+        textView = findViewById(R.id.textView);
         buttonImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivityForResult(intent,REQUEST_CODE);
+                startActivityForResult(intent, REQUEST_CODE);
 
             }
         });
@@ -60,16 +61,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void gettingIntent() {
-        imageView = findViewById(R.id.imageInMain);
-        textView = findViewById(R.id.textView);
-        Intent getIntent = getIntent();
-        if (getIntent.getStringExtra(SecondActivity.KEY_FOR_INPUT) != null && getIntent.getStringExtra(SecondActivity.KEY_FOR_IMAGE) != null) {
-            textMessage = getIntent.getStringExtra(SecondActivity.KEY_FOR_INPUT);
-            imageString = getIntent.getStringExtra(SecondActivity.KEY_FOR_IMAGE);
-            imageView.setImageURI(Uri.parse(imageString));
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
+            imageString = data.getStringExtra(SecondActivity.KEY_FOR_IMAGE);
+            textMessage = data.getStringExtra(SecondActivity.KEY_FOR_INPUT);
             textView.setText(textMessage);
+            imageView.setImageURI(Uri.parse(imageString));
         }
-    }
 
+    }
 }
