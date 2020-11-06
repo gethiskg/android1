@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/parentRecycler"
+        android:layout_width="403dp"
+        android:layout_height="440dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
+        />
+
+    <EditText
+        android:id="@+id/editInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSave"
+        android:hint="Input name"
+        android:inputType="text"
+        android:textColor="#000"
+        android:paddingLeft="16dp"
+        />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#AD7E10"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:text="Save"
+        android:textColor="#fff" />
+</LinearLayout>
