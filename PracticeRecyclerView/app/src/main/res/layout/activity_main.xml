@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        layout_alingParantParant="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:selectAllOnFocus="true"
+        android:hint="type name:"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/editAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:selectAllOnFocus="true"
+        android:hint="type our age:"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/editName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <ImageView
+        android:id="@+id/iconId"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_add_pic"
+        android:layout_marginTop="10dp"
+        android:background="#C6BBBB "
+        app:layout_constraintTop_toBottomOf="@+id/editAge"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        />
+
+    <TextView
+        android:id="@+id/singForIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:gravity="center_horizontal"
+        android:text="add picture by pressing this sign."
+        android:textColor="#F4160F"
+        android:textSize="10dp"
+        app:layout_constraintRight_toLeftOf="@+id/iconId"
+        app:layout_constraintBottom_toBottomOf="@id/iconId"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <Button
+        android:id="@+id/btnGreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/iconId"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp"
+        android:text="Save"
+        android:backgroundTint="#49E518"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
