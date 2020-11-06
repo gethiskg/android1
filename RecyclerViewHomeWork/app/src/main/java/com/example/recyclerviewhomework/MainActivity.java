@@ -20,7 +20,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private static final String INSTATE_POSITION = "keyPosition";
     private RecyclerView recyclerView;
-    private ArrayList<UserInfo> list;
+    private ArrayList<UserInfo> list;/* just changed from List to ArrayList it works with the implantation of Parcelable method */
     private MyAdapter myAdapter;
     Button btnSave;
     EditText editText;
@@ -61,16 +61,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.d(TAG, "onSaveInstanceState: " + list.toString());
         outState.putParcelableArrayList(INSTATE_POSITION,list);
+        Log.d(TAG, "onSaveInstanceState: " + list.toString());
 
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        Log.d(TAG, "onRestoreInstanceState: "+ savedInstanceState.getParcelableArrayList(INSTATE_POSITION));
         list.addAll(savedInstanceState.getParcelableArrayList(INSTATE_POSITION));
+        Log.d(TAG, "onRestoreInstanceState: "+ savedInstanceState.getParcelableArrayList(INSTATE_POSITION));
 
 
 
