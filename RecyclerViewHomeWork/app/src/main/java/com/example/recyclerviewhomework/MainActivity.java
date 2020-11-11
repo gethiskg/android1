@@ -71,8 +71,5 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         list.addAll(savedInstanceState.getParcelableArrayList(INSTATE_POSITION));
         Log.d(TAG, "onRestoreInstanceState: "+ savedInstanceState.getParcelableArrayList(INSTATE_POSITION));
-
-
-
     }
 }
