@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <fragment
+        android:id="@+id/fragmentSourse"
+        android:name="com.example.homeworkfragment.FragmentSourse"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:layout="@layout/fragment_sourse"/>
+
+    <fragment
+        android:id="@+id/recyclerFrag"
+        android:name="com.example.homeworkfragment.FragmentRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        />
+    <FrameLayout
+        android:id="@+id/frameFrag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/toGetDynamicFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="160dp"
+            android:text="get window"
+            />
+
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>
