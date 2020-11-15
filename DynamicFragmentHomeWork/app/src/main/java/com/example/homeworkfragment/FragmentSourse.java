@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 
 public class FragmentSourse extends Fragment {
 
-
     private Button btnHide;
     private Button btnShow;
     private FragmentClicker clickListener;

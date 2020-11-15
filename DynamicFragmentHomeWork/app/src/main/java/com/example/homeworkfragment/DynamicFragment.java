@@ -19,6 +19,7 @@ public class DynamicFragment extends Fragment {
     public EditText editTxtDynamic;
     private Button btnTransport;
     private FragmentClicker clickListener;
+    private FragmentRecycler fragmentRecycler;
 
 
     private String mParam1;
@@ -59,21 +60,18 @@ public class DynamicFragment extends Fragment {
     }
 
     private void initView(View view) {
-
         editTxtDynamic = view.findViewById(R.id.dynamicTxtEdit);
         btnTransport = view.findViewById(R.id.btnDynamicTrans);
     }
 
     private void clickListener() {
-        btnTransport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.clickTextTransporter(editTxtDynamic.getText().toString());
-//                clickListener.clickTextTransporter(editTxtDynamic.getText().toString()); second way of implementing the methods
+        btnTransport.setOnClickListener(v -> {
+            MainActivity mainActivity = (MainActivity) getActivity();
+            mainActivity.clickTextTransporter(editTxtDynamic.getText().toString());
+
+//         clickListener.clickTextTransporter(editTxtDynamic.getText().toString()); second way of implementing the methods
 
 
-            }
         });
     }
 }

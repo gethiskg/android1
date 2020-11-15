@@ -19,11 +19,8 @@ public class MainActivity extends AppCompatActivity implements FragmentClicker {
     private Fragment fragment;
     private FragmentRecycler fragmentRecycler;
     private Button openWindow;
-
-    /*all for recycler view*/
-    private RecyclerView recyclerView;
-    private ArrayList<String > list;
     private MyAdapter myAdapter;
+    private MessageCarrier listener;
 
 
 
@@ -37,14 +34,11 @@ public class MainActivity extends AppCompatActivity implements FragmentClicker {
     }
 
     private void initialization() {
+        fragmentRecycler = (FragmentRecycler) getSupportFragmentManager().findFragmentById(R.id.recyclerFrag);
         openWindow = findViewById(R.id.toGetDynamicFragment);
-        recyclerView = findViewById(R.id.recyclerInFragment);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        list = new ArrayList<>();
-        myAdapter = new MyAdapter(list,this);
-        recyclerView.setAdapter(myAdapter);
-
+        listener = fragmentRecycler;
     }
+
 
     private void onClickOperations() {
         openWindow.setOnClickListener(v -> {
@@ -53,14 +47,15 @@ public class MainActivity extends AppCompatActivity implements FragmentClicker {
             transaction = fragmentManager.beginTransaction();
             transaction.add(R.id.frameFrag, dynamicFragment);
             transaction.commit();
+            transaction.addToBackStack(null);
             openWindow.setVisibility(View.INVISIBLE);
-
         });
+
     }
 
     @Override
     public void clickTextTransporter(String message) {
-        myAdapter.addOn(message);
+        listener.getMessage(message);
     }
 
     @Override
@@ -73,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements FragmentClicker {
 
     @Override
     public void clickHideFragment() {
-        fragmentRecycler = (FragmentRecycler) getSupportFragmentManager().findFragmentById(R.id.recyclerFrag);
         fragmentManager = getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
         transaction.hide(fragmentRecycler);
