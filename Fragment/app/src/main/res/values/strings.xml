@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="send">send</string>
+    <string name="replace">replace</string>
+    <string name="title_activity_details">DetailsActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="desc">I’ve spent the last weekend in Provincetown, Massachusetts, the gayest,
+        most charming little Cape Cod beach town in the world.
+        (Think Cabot Cove from Murder, She Wrote, except everyone is Angela Lansbury.)
+        On Saturday, the day after Taylor Swift released “You Need To Calm Down,” I bumped into
+        Jeremy Blacklow, the Director of Entertainment Media at GLAAD, the media-monitoring organization
+        she name-checks in the song. I asked how that experience had been for GLAAD,
+        and Jeremy looked me right in the eyes and said, "AMAZING." Taylor made a big donation just a few weeks ago in anticipation of “Calm Down,”
+        and in the wake of the songs lyric video,
+        $13 donations to the non profit 13 being Taylor Swifts favorite numberhave come pouring in.
+        On Saturday, the day after Taylor Swift released “You Need To Calm Down,” I bumped intoOn Saturday, the day after Taylor Swift released “You Need To Calm Down,” I bumped into
+        On Saturday, the day after Taylor Swift released “You Need To Calm Down,” I bumped into
+        On Saturday, the day after Taylor Swift released “You Need To Calm Down,” I bumped into
+        On Saturday, the day after Taylor Swift released “You Need To Calm Down,” I bumped into
+        On Saturday, the day after Taylor Swift released “You Need To Calm Down,” I bumped into
+        On Saturday, the day after Taylor Swift released “You Need To Calm Down,” I bumped into
+
+    </string>
+</resources>
